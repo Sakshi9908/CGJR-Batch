@@ -61,7 +61,7 @@ public class StudentUsingSet {
 		String fname, lname, school;
 		Scanner sc = new Scanner(System.in);
 
-		List<Student> s = new ArrayList<Student>();
+		ArrayList<Student> s = new ArrayList<Student>();
 
 		while (true) {
 			System.out.println("Enter 1 to Insert");
@@ -91,18 +91,6 @@ public class StudentUsingSet {
 					s.add(new Student(roll, fname, lname, school));
 				}
 
-			} else if (choice == 7) {
-				Iterator<Student> it = s.iterator();
-				while (it.hasNext()) {
-
-					Student student = (Student) it.next();
-
-					System.out.println(student);
-					
-
-				}
-				System.out.println("List is empty");
-				System.out.println("------------------------------------------------");
 			} else if (choice == 2) {
 				boolean found = false;
 				System.out.println("-----------------------------------------------------");
@@ -149,8 +137,30 @@ public class StudentUsingSet {
 					System.out.println("Record is updated successfully");
 					System.out.println("------------------------------------------------");
 				}
+			} else if (choice == 4) {
+					s.sort(null);
+			} else if (choice == 5) {
+
+			} else if (choice == 6) {
+				System.out.println("Size = " + s.size());
+			} else if (choice == 7) {
+				Iterator<Student> it = s.iterator();
+				while (it.hasNext()) {
+
+					Student student = (Student) it.next();
+
+					System.out.println(student);
+
+				}
+				System.out.println("List is empty");
+				System.out.println("------------------------------------------------");
+			} else if (choice == 8) {
+				System.out.println("Exit");
+				break;
+			} else {
+				System.out.println("Enter number between 1 to 7 :");
 			}
-			
+
 		}
 
 	}

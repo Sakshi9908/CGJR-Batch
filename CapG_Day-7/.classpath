@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry excluding="src/com/capg/day7/" kind="src" path=""/>
-	<classpathentry kind="src" path="src/com/capg/day7"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>

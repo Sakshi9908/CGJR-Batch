@@ -10,7 +10,7 @@ public class MyMap {
 		map.put(1004, "Smita");
 		map.put(1005, "Suvidhee");
 		
-		System.out.println(map); //map doesnot hold key as duplicate
+		System.out.println(map); //map does not hold key as duplicate
 		System.out.println("-------------------------------------------------");
 		System.out.println(map.get(1002));
 		System.out.println("-------------------------------------------------");

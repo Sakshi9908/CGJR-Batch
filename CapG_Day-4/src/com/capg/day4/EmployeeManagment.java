@@ -2,8 +2,22 @@ package com.capg.day4;
 
 import java.util.*;
 
-class EmployeeM {
-	
+class Employee {
+	private String name;
+	private int id;
+	private int salary;
+
+	Employee() {
+
+	}
+
+	public Employee(String name, int id, int salary) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.salary = salary;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -12,12 +26,12 @@ class EmployeeM {
 		this.name = name;
 	}
 
-	public int getiD() {
-		return iD;
+	public int getId() {
+		return id;
 	}
 
-	public void setiD(int iD) {
-		this.iD = iD;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getSalary() {
@@ -30,23 +44,13 @@ class EmployeeM {
 
 	@Override
 	public String toString() {
-		return "EmployeeM [name=" + name + ", iD=" + iD + ", salary=" + salary + "]";
+		return "EmployeeM [Name=" + name + ", Id=" + id + ", Salary=" + salary + "]";
 	}
 
-	EmployeeM()
-	{
-		
+	public int compareTo(Employee employee) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
-	public EmployeeM(String name, int iD, int salary) {
-		super();
-		this.name = name;
-		this.iD = iD;
-		this.salary = salary;
-	}
-	private String name;
-	private int iD;
-	private int salary;
 
 }
 
@@ -55,103 +59,156 @@ public class EmployeeManagment {
 	public static void main(String arg[]) {
 
 		Scanner sc = new Scanner(System.in);
-		EmployeeM[] emp= {};
+		Employee[] emp = {};
 
 		while (true) {
 
-			System.out.println("Enter 1 for create a List of employee");
-			System.out.println("Enter 2 for Display a List of employee");
-			System.out.println("Enter 3 for search employee");
-			System.out.println("Enter 4 for delete a employee");
-			System.out.println("Enter 6 Sort the Employee ASC BY Name");
-			System.out.println("Enter 7 Sort the Employee ASC By Name");
-			System.out.println("Enter 8 Sort the Employee ASC BY Salary");
-			System.out.println("Enter 9 Sort the Employee ASC By Salary");
-			System.out.println("Enter 10 Minimun paid salary employee");
-			System.out.println("Enter 11 maximum salry of employee");
-			System.out.println("Enter 12 Avg of employee Salary");
-			System.out.println("Enter 13 Sum of employee Salary");
-			
-			System.out.println("enter 5 for exit");
+			System.out.println("1. Create a List of Employee");
+			System.out.println("2. Display a List of Employee");
+			System.out.println("3. Search Employee");
+			System.out.println("4. Delete an Employee");
+			System.out.println("5. Sort the Employee BY Name");
+			System.out.println("6. Sort the Employee ASC By Id");
+			System.out.println("7. Minimun paid salary employee");
+			System.out.println("8. Maximum salary of employee");
+			System.out.println("9. Average of employee Salary");
+			System.out.println("10. Sum of employee Salary");
+			System.out.println("11. Exit");
+			System.out.println("------------------------------------------------------------------------");
 			int choice = sc.nextInt();
 
 			if (choice == 1) {
-				System.out.println("Enter the Number of Employee you want to enter");
-				int size = sc.nextInt();
-				emp=new EmployeeM[size];
-				for (int i = 0; i < size; i++) {
-					
-					System.out.println("Enter name Employee "+i);
-					String name=sc.next();
-					System.out.println("Enter Id Employee "+i);
-					int id=sc.nextInt();
-					System.out.println("Enter Salary Employee "+i);
-					int salary=sc.nextInt();
-                 emp[i]=new EmployeeM(name,id,salary); 
+				System.out.println("Enter the Number of Employees you want to enter: ");
+				int s = sc.nextInt();
+				emp = new Employee[s];
+				for (int i = 0; i < s; i++) {
+
+					System.out.println("Enter Name of Employee: " + i);
+					String name = sc.next();
+					System.out.println("Enter Id of Employee ");
+					int id = sc.nextInt();
+					System.out.println("Enter Salary of Employee ");
+					int salary = sc.nextInt();
+					emp[i] = new Employee(name, id, salary);
 				}
 
 			}
-			if(choice==2)
-			{
-				for(int i=0;i<emp.length;i++)
-				{
-					if(emp[i].getiD()!=0)
-					{
-					System.out.println(emp[i]);
+			if (choice == 2) {
+				for (int i = 0; i < emp.length; i++) {
+					if (emp[i].getId() != 0) {
+						System.out.println(emp[i]);
+						System.out.println("------------------------------------------------------------");
 					}
 				}
 			}
-			if(choice==3)
-			{
-				System.out.println("Enter name which you want to search");
-				String name=sc.next();
-				boolean flag=true;
-				for(int i=0;i<emp.length;i++)
-				{
-					if(emp[i].getName().equalsIgnoreCase(name))
-					{
-						System.out.println("Employee Found "+emp[i].toString());
-						flag=false;
+			if (choice == 3) {
+				System.out.println("Enter Name you want to search: ");
+				String name = sc.next();
+				boolean flag = true;
+				for (int i = 0; i < emp.length; i++) {
+					if (emp[i].getName().equalsIgnoreCase(name)) {
+						System.out.println("Employee Found \t" + emp[i].toString());
+						System.out.println("-------------------------------------------------------------");
+						flag = false;
 						break;
-						
+
 					}
 				}
-				if(flag)
-				{
+				if (flag) {
 					System.out.println("Record not Found");
 				}
-				
+
 			}
-			if(choice==4)
-			{
-				boolean deleteFlag=true;
-				for(int i=0;i<emp.length;i++)
-				{
-					System.out.println(emp[i]);
-				}
-				System.out.println("Enter the id for which you want to delete the employee");
-				int id=sc.nextInt();
-				for(int i=0;i<emp.length;i++)
-				{
-					if(emp[i].getiD()==id)
-					{
-						System.out.println("Deleting record "+emp[i].toString());
-						emp[i]=new EmployeeM();
-						deleteFlag=false;
-						break;
-						
+			
+
+			if (choice == 5) {
+				Employee temp;
+				for (int i = 0; i < emp.length - 1; i++) {
+					for (int j = i + 1; j < emp.length; j++) {
+						if ((emp[i].getName().compareTo(emp[j].getName())) < 0) {
+							temp = emp[i];
+							emp[i] = emp[j];
+							emp[j] = temp;
+						}
 					}
 				}
-				if(deleteFlag)
-				{
-					System.out.println("No Matching Id found");
+				System.out.println("Sorted employees by Name are:");
+				for (int i = 0; i < emp.length; i++) {
+					if (emp[i].getId() != 0) {
+						System.out.println(emp[i]);
+					}
 				}
-				
-			}
-			if (choice == 5) {
-				break;
+				System.out.println("------------------------------------------------------------");
 			}
 
+			if (choice == 6) {
+				Employee temp;
+				for (int i = 0; i < emp.length - 1; i++) {
+					for (int j = i + 1; j < emp.length; j++) {
+						if (emp[i].getId() > emp[j].getId()) {
+							temp = emp[i];
+							emp[i] = emp[j];
+							emp[j] = temp;
+						}
+					}
+				}
+				System.out.println("Sorted employees in ASC by ID are:");
+				for (int i = 0; i < emp.length; i++) {
+					if (emp[i].getId() != 0) {
+						System.out.println(emp[i]);
+					}
+				}
+				System.out.println("------------------------------------------------------------");
+			}
+
+			if (choice == 7) {
+				double min = emp[0].getSalary();
+				for (int i = 0; i < emp.length; i++) {
+					if (emp[i].getSalary() < min) {
+						min = emp[i].getSalary();
+					}
+				}
+				System.out.print("Minimum salary paid to employee is: " + min);
+				System.out.println("------------------------------------------------------------");
+			}
+
+			if (choice == 8) {
+				double max = emp[0].getSalary();
+				for (int i = 0; i < emp.length; i++) {
+					if (emp[i].getSalary() > max) {
+						max = emp[i].getSalary();
+					}
+				}
+				System.out.print("Maximum salary paid to employee is: " + max);
+				System.out.println("------------------------------------------------------------");
+			}
+
+			if (choice == 9) {
+				double sum = 0, avg;
+				for (int i = 0; i < emp.length; i++) {
+					sum += emp[i].getSalary();
+				}
+				avg = sum / emp.length;
+				System.out.printf("Average of salaries of all employees is: %.3f", avg);
+				System.out.println("------------------------------------------------------------");
+			}
+			if (choice == 10) {
+				double sum = 0;
+				for (int i = 0; i < emp.length; i++) {
+					sum += emp[i].getSalary();
+				}
+				System.out.printf("Sum of salaries of all employees is: %.3f", sum);
+				System.out.print("\nPress enter to continue.");
+				System.out.println("------------------------------------------------------------");
+				sc.nextLine();
+				sc.nextLine();
+			}
+
+			if (choice == 11) {
+				break;
+			}
 		}
+		sc.close();
+		return;
 	}
 }

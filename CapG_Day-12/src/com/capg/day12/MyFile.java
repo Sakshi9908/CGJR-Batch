@@ -6,10 +6,10 @@ public class MyFile {
 	public static void main(String[] args) {
 		try {
 			String str="Hello Java\n";
-			int a=22;
+			String a="22 \n";
 			FileWriter fw = new FileWriter("D://abc.txt");
 			fw.write(str);
-			System.out.println();
+			fw.write(a);
 			fw.write(65);
 
 			fw.write("\nI am Java\n");

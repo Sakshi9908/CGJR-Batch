@@ -6,8 +6,15 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Sakshi\Documents\Eclipse projects\JPA-Helloworld"/>
 			<item value="C:\Users\Sakshi\Desktop\CapG_JR\CapG_Day_7"/>
 			<item value="C:\Users\Sakshi\Desktop\CapG_JR"/>
 		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ResourceNavigator">
+		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
+		<item key="ResourceWorkingSetFilter.STORE_WORKING_SET" value="Aggregate for window 1643966921162"/>
 	</section>
 </section>

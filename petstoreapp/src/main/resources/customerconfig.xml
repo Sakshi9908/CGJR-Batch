@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+xmlns:c="http://www.springframework.org/schema/c"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="customer" class="petstoreproject.petstoreapp.Customer" p:custName="John">
+
+<property name="custAddress" value="23 bker street"/>
+<property name="phoneno" value="7685847857"/>
+</bean>
+<bean id="ncustomer" class="petstoreproject.petstoreapp.Customer" c:custName="Peter" c:custAddress="23 old street" c:phoneno="87659048759">
+</bean>
+</beans>

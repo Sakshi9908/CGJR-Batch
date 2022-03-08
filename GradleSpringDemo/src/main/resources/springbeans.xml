@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+<context:annotation-config/>
+<bean id="person" class="GradleSpringDemo.Person">
+<property name="personName" value="Smita Pradhan"/>
+</bean>
+<bean id="person1" class="GradleSpringDemo.Person">
+<property name="personName" value="Disha Kale"/>
+</bean>
+
+<bean id="person2" class="GradleSpringDemo.Person">
+<property name="personName" value="Sanjal Shah"/>
+</bean>
+
+<bean id="account" class="GradleSpringDemo.Account">
+<property name="accountName" value="smita@gmail.com"/>
+</bean>
+
+<bean id="payment" class="GradleSpringDemo.Payment">
+<property name="amount" value="50000.00" />  <!-- remove this and check exception will occur for required -->
+<property name="phoneno" value="9867474737" />
+</bean>
+
+
+</beans>

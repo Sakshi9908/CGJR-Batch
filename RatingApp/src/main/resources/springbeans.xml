@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="user" class="CaseStudy3.RatingApp.User">
+	<property name="username" value="Sakshi Shah" />
+	<property name="emailid" value="sakshi@gmail.com" />
+	<property name="password" value="Sakshi@123" />
+	<property name="mobileno" value="+91 8787656473" />
+</bean>
+<bean id="review" class="CaseStudy3.RatingApp.Review">
+	<property name="reviewid" value="1001"/>
+	<property name="product_reviewed" value="Completed"/>
+	<property name="review_text" value="Good Product. Happy to use it."/>
+	<property name="comments">
+		<list>
+			<ref bean="comments"/>
+			<ref bean="comments1"/>
+		</list>
+	</property>
+</bean>
+
+<bean id="financialproduct" class="CaseStudy3.RatingApp.Financial_Product">
+	<constructor-arg ref="review"/>
+	
+	<property name="financial_productid" value="1001" />
+	<property name="financial_productname" value="Chocolates" />
+	<property name="description" value="Chocolates with chocochips" />
+	<property name="rating" value="8" />
+</bean>
+
+<bean id="comments" class="CaseStudy3.RatingApp.Comment">
+	<property name="comment_id" value="101" />
+	<property name="comment_text" value="Good Product" />
+	<property name="likes" value="103" />
+	<property name="dislikes" value="40" />
+	<property name="report" value="true" />
+</bean> 
+
+<bean id="comments1" class="CaseStudy3.RatingApp.Comment">
+	<property name="comment_id" value="102" />
+	<property name="comment_text" value="Nice" />
+	<property name="likes" value="110" />
+	<property name="dislikes" value="20" />
+	<property name="report" value="false" />
+</bean> 
+</beans>

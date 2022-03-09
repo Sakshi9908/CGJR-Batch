@@ -13,7 +13,7 @@
 </bean>
 <bean id="review" class="CaseStudy3.RatingApp.Review">
 	<property name="reviewid" value="1001"/>
-	<property name="product_reviewed" value="Completed"/>
+	<property name="product_reviewed" ref="financialproduct"/>
 	<property name="review_text" value="Good Product. Happy to use it."/>
 	<property name="comments">
 		<list>

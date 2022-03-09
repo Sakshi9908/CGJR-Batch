@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="employee" class="CaseStudy2.EmployeeTaskSystem.Employee">
+	<property name="employeeId" value="101"/>
+	<property name="employeeName" value="Sakshi Shah"/>
+	<property name="department" value="Development"/>
+	<property name="designation" value="Analyst"/>
+	<property name="password" value="Sakshi@28"/>
+	<property name="superior" ref="employee1"/>
+	<property name="rating" value="GOOD" />
+	<property name="taskList">
+		<list>
+			<ref bean="task"/>
+			<ref bean="task1"/>
+			<ref bean="task2"/>
+		</list>
+	</property>
+	<property name="attendanceList">
+		<list>
+			<ref bean="attendance"/>
+			<ref bean="attendance1"/>
+			<ref bean="attendance2"/>
+		</list>
+	</property>
+</bean>
+
+<bean id="employee1" class="CaseStudy2.EmployeeTaskSystem.Employee">
+	<property name="employeeId" value="102"/>
+	<property name="employeeName" value="Akshata Gurupwar"/>
+	<property name="department" value="IT"/>
+	<property name="designation" value="Team Lead"/>
+	<property name="password" value="Akshata@123"/>
+	<property name="rating" value="EXCELLENT" />
+</bean>
+
+<bean id="attendance" class="CaseStudy2.EmployeeTaskSystem.Attendance">
+	<property name="attendanceId" value="01"/>
+	<property name="attendanceDate" value="03/09/2022 09:00:00"/>
+	<property name="Status" value="PRESENT"/>
+</bean>
+
+<bean id="attendance1" class="CaseStudy2.EmployeeTaskSystem.Attendance">
+	<property name="attendanceId" value="02"/>
+	<property name="attendanceDate" value="03/10/2022 09:00:00"/>
+	<property name="Status" value="ABSENT"/>
+</bean>
+
+<bean id="attendance2" class="CaseStudy2.EmployeeTaskSystem.Attendance">
+	<property name="attendanceId" value="03"/>
+	<property name="attendanceDate" value="03/22/2022 09:00:00"/>
+	<property name="Status" value="LEAVE"/>
+</bean>
+
+<bean id="task" class="CaseStudy2.EmployeeTaskSystem.Task">
+	<property name="taskId" value="1001"/>
+	<property name="taskName" value="ABC"/>
+	<property name="taskDescription" value="Has to be done in one week"/>
+	<property name="dateOfAllocation" value="03/10/2022 01:30:00" />
+	<property name="deadline" value="03/20/2022 02:30:00" />
+	<property name="allocatedTo" ref="employee"/>
+</bean>
+
+<bean id="task1" class="CaseStudy2.EmployeeTaskSystem.Task">
+	<property name="taskId" value="1002"/>
+	<property name="taskName" value="XYZ"/>
+	<property name="taskDescription" value="Has to be done in two days"/>
+	<property name="dateOfAllocation" value="03/08/2022 09:30:00" />
+	<property name="deadline" value="03/10/2022 06:00:00" />
+	<property name="allocatedTo" ref="employee1"/>
+</bean>
+
+<bean id="task2" class="CaseStudy2.EmployeeTaskSystem.Task">
+	<property name="taskId" value="1003"/>
+	<property name="taskName" value="MNO"/>
+	<property name="taskDescription" value="Completed"/>
+	<property name="dateOfAllocation" value="03/10/2022 01:30:00" />
+	<property name="deadline" value="03/20/2022 02:30:00" />
+	<property name="allocatedTo" ref="employee"/>
+</bean>
+</beans>

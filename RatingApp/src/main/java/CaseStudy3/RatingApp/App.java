@@ -26,7 +26,7 @@ public class App
     	System.out.println("Rating          : "+fp.getRating());
     	System.out.println("------------------------------------ REVIEW ------------------------------------");
     	System.out.println("Review Id       : "+fp.getReview().getReviewid());
-    	System.out.println("Product Reviewed: " +fp.getReview().getProduct_reviewed());
+    	System.out.println("Product Reviewed: " +fp.getReview().getProduct_reviewed().getFinancial_productname());
     	System.out.println("Review Text     : "+fp.getReview().getReview_text());
     	List<Comment> comments = fp.getReview().getComments();
     	System.out.println("----------------------------------- COMMENTS ------------------------------------");

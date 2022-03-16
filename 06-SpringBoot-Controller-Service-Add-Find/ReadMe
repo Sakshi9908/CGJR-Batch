@@ -1,0 +1,32 @@
+
+GET
+http://localhost:9091/capgtopics
+
+ Postman : choose : Body  , raw ,JSON
+Post:   
+http://localhost:9091/capgtopics
+{
+        "name": "Raj Technologies ",
+        "dscription": "Raj",
+        "id": "RajJAVA"
+    }
+    
+    
+    {
+        "name": "UI Technologies",
+        "description": "JavaScript",
+        "id": "ReactJS"
+    }
+    
+  PUT:
+    
+    http://localhost:9091/capgtopics/Spring
+    
+   
+   Output  of postman :  
+   
+   {
+    "name": "Spring Boot",
+    "dscription": "Sprinv MVC",
+    "id": "Spring"
+}

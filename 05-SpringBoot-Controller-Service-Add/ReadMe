@@ -1,0 +1,10 @@
+GET:
+http://localhost:9091/capgtopic
+
+POST:
+http://localhost:9091/capgtopic
+{
+    "name": "UI Tech",
+    "description": "JS",
+    "id": "ReactJS"
+}

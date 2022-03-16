@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
+ <welcome-file-list>
+ 	<welcome-file>/</welcome-file>
+ </welcome-file-list>
 	<servlet>
 		<servlet-name>
 			dispatcher
@@ -7,11 +10,12 @@
 		<servlet-class>
 			org.springframework.web.servlet.DispatcherServlet
 		</servlet-class>
+	</servlet>
 		<servlet-mapping>
 			<servlet-name>
 				dispatcher
 			</servlet-name>
 			<url-pattern>/</url-pattern>
 		</servlet-mapping>
-	</servlet>
+
 </web-app>

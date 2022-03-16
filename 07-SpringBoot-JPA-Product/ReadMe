@@ -1,0 +1,40 @@
+
+
+SQL> insert into product_masters values(10,'i7','HP',55000);
+ 
+
+SQL> insert into product_masters values(20,'i7','DELL',60000);
+
+Postman :
+get:
+http://localhost:9092/find/20
+
+
+
+ UPDate :
+ 
+// Postman :PUT :   body  ram
+http://localhost:9092/update        
+	{
+	    "pid": 10,
+	    "pname": "HP",
+	    "price": 50000.0,
+	    "mno": "i5ram"
+	}
+	
+
+
+Post Man :
+
+http://localhost:9092/find/20
+
+update
+http://localhost:9092/update
+body :
+    {
+    "pid": 10,
+    "mno": "i5",
+    "pname": "HP",
+    "price": 50000.0,
+    
+}
